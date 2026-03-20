@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelería Simonetta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            background: #fff7fb;
+            color: #5c4a4a;
+        }
+
+        header {
+            background-image: url("Banner1.jpg");
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 65px;
+            color: palevioletred;
+        }
+
+        .menu-btn {
+            display: none;
+            background: #ff9fbc;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        nav {
+            background: #ffd6e7;
+            text-align: center;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 12px;
+            color: #6b4a4a;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            background: #ffeaf4;
+            border-radius: 8px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #fff0f6;
+            min-width: 180px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown-content a:hover {
+            background: #ffe6f0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .buscador {
+            padding: 6px;
+            border-radius: 20px;
+            border: none;
+        }
+
+        .boton {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 20px;
+            background: #ff9fbc;
+            color: white;
+            cursor: pointer;
+        }
+
+        .info {
+            background: #e8f6f3;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            font-weight: 600;
+        }
+
+        .productos {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .productos h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            color: #c97aa2;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff0f6;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .seccion {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        video {
+            width: 60%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #ffd6e7;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media(max-width:900px) {
+            .galeria {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header h1 {
+                font-size: 45px;
+            }
+
+            video {
+                width: 80%;
+            }
+
+            .info {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+
+        @media(max-width:600px) {
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+
+            .dropdown {
+                display: block;
+            }
+
+            .dropdown-content {
+                position: relative;
+                box-shadow: none;
+                width: 100%;
+                display: none;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+
+            .galeria {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                padding: 80px 10px;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            video {
+                width: 100%;
+            }
+
+            .info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="inicio">
+        <h1>Pastelería Simonetta</h1>
+        <h2>El sabor dulce que alegra tu día</h2>
+    </header><button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <div class="dropdown">
+            <a href="#">Pasteles</a>
+            <div class="dropdown-content">
+                <a href="pag1.html">Tres Leches</a>
+                <a href="pag3.html">Fresa</a>
+                <a href="pag2.html">Chocolate</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Cupcakes</a>
+            <div class="dropdown-content">
+                <a href="pag4.html">Cupcake simple</a>
+                <a href="pag5.html">Cupcake con decoración</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Galletas</a>
+            <div class="dropdown-content">
+                <a href="pag6.html">Chocolate</a>
+                <a href="pag7.html">Avena</a>
+                <a href="pag8.html">Mantequilla</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Café</a>
+            <div class="dropdown-content">
+                <a href="pag9.html">Americano</a>
+                <a href="pag10.html">Capuchino</a>
+            </div>
+        </div><a href="#galeria">Galería</a> <a href="#video">Video</a>
+         <div class="dropdown">
+                <a href="#">Formularios</a>
+                <div class="dropdown-content">
+                    <a href="FormularioContrato.html">Contratos</a>
+                    <a href="FormularioOpinión.html">Opinión</a>
+                    <a href="FormularioPedido.html">Pedidos</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Redes</a>
+                <div class="dropdown-content">
+                    <a href="https://www.facebook.com/share/17SK4ktBtE/">Facebook</a>
+                    <a href="https://www.instagram.com/pasteleria_simonetta?igsh=eGtxd2IwdHJna2tz">Instagram</a>
+                    <a href="https://www.tiktok.com/@pasteleria_simonetta?_r=1&_t=ZS-94pb1ZxHdGH">TikTok</a>
+                </div>
+            </div>
+
+        </div><a href="#contacto">Contacto</a>
+
+        <input class="buscador" id="buscar" type="text" placeholder="Buscar producto" onkeyup="buscar()">
+        <button class="boton" onclick="buscar()">🔎</button>
+    </nav>
+    <div class="info">
+        <div>🍰 Pasteles personalizados</div>
+        <div>☕ Café recién preparado</div>
+        <div>🚚 Entregas a domicilio</div>
+    </div>
+    <div class="Audio">
+        <center>
+            <audio controls>
+                <source src="musica.mp3" type="audio/mp3">
+            </audio>
+        </center>
+    </div>
+    <section class="productos" id="galeria">
+        <h2>Lo más pedido</h2>
+        <div class="galeria">
+            <div class="card"><img src="PastelChocolate.jfif">
+                <h3>Pastel de Chocolate</h3>
+                <p>$350</p>
+            </div>
+            <div class="card"><img src="PastelFresa.jfif">
+                <h3>Pastel de Fresa</h3>
+                <p>$320</p>
+            </div>
+            <div class="card"><img src="PastelTresLeches.jfif">
+                <h3>Pastel Tres Leches</h3>
+                <p>$360</p>
+            </div>
+            <div class="card"><img src="PastelVainilla.jfif">
+                <h3>Pastel Vainilla</h3>
+                <p>$300</p>
+            </div>
+            <div class="card"><img src="PastelRedVelvet.jfif">
+                <h3>Pastel Red Velvet</h3>
+                <p>$380</p>
+            </div>
+            <div class="card"><img src="PastelOreo.jfif">
+                <h3>Pastel de Oreo</h3>
+                <p>$370</p>
+            </div>
+            <div class="card"><img src="PastelMango.jfif">
+                <h3>Pastel de Mango</h3>
+                <p>$340</p>
+            </div>
+            <div class="card"><img src="PastelPiña.jfif">
+                <h3>Pastel de Piña</h3>
+                <p>$330</p>
+            </div>
+            <div class="card"><img src="PastelDurazno.jfif">
+                <h3>Pastel de Durazno</h3>
+                <p>$350</p>
+            </div>
+            <div class="card"><img src="PastelDeQueso.jfif">
+                <h3>Pastel de Queso</h3>
+                <p>$390</p>
+            </div>
+        </div>
+    </section>
+    <section class="seccion" id="video">
+        <h2>Video</h2>
+        <video controls>
+            <source src="PastelVideo.mp4" type="video/mp4">
+            Tu navegador no soporta el video
+        </video>
+    </section>
+    <footer id="contacto">
+        <p>Pastelería Simonetta</p>
+        <p>Tixméhuac, Yucatán</p>
+        <a href="tel:9971078017">Telefono</a>
+        <br><br>
+        <a href="mailto:pasteleriasimonetta@gmail.com">Enviar correo</a>
+    </footer>
+    <script>
+        function toggleMenu() {
+            document.querySelector("nav").classList.toggle("show");
+        }
+
+        function buscar() {
+            let input = document.getElementById("buscar").value.toLowerCase();
+            let cards = document.querySelectorAll(".card");
+
+            cards.forEach(function (card) {
+                let texto = card.innerText.toLowerCase();
+
+                if (input === "") {
+                    card.style.display = "";
+                } else if (texto.includes(input)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        document.querySelectorAll(".dropdown > a").forEach(function (btn) {
+            btn.addEventListener("click", function (e) {
+                if (window.innerWidth <= 600) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

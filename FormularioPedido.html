@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Pedido - Pastelería Simonetta</title>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+        <style>
+            body{
+                background:#f6eef2;
+                font-family:Arial;
+                margin:0;
+            }
+            .volver{
+                display:inline-block;
+                margin-bottom:25px;
+                padding:8px 15px;
+                background:#f7d6ff;
+                border:2px solid #d27ca7;
+                border-radius:10px;
+                text-decoration:none;
+                color:#6b4a4a;
+                font-size:15px;
+            }
+            .volver:hover{
+                background:#eed1ff;
+            }
+            header{
+                background:#e7b2c2;
+                text-align:center;
+                padding:40px 20px;
+            }
+            h1{
+                font-family:'Great Vibes',cursive;
+                color:white;
+            }
+            .container{
+                max-width: 600px;
+                width:90%;
+                margin:40px auto;
+                background:white;
+                padding:25px;
+                border-radius:10px;
+                box-sizing: border-box;
+            }
+            h2{
+                color:#c27a96;
+                text-align:center;
+            }
+            label{
+                color:#5a3b2e;
+                font-weight:bold;
+            }
+            input,select,textarea{
+                width:100%;
+                padding:10px;
+                margin:10px 0;
+                border-radius:5px;
+                border:1px solid #ccc;
+                box-sizing: border-box;
+            }
+            button{
+                background:#c27a96;
+                color:white;
+                border:none;
+                padding:12px;
+                width:100%;
+                border-radius:6px;
+            }
+            @media(max-width:600px){
+                h1{
+                    font-size: 40px;
+                }
+                .container{
+                    width:95%;
+                    padding:20px;
+                }
+                 header{
+                    padding:20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Pastelería Simonetta</h1>
+            <a class="volver" href="index.html">volver al inicio</a>
+        </header>
+        <div class="container">
+            <h2>Formulario de Pedido</h2>
+            <form>
+                <label>Nombre</label>
+                <input type="text" required>
+                <label>Teléfono</label>
+                <input type="tel" required>
+                <label>Producto</label>
+                <select>
+                    <option>Pastel</option>
+                    <option>Cupcakes</option>
+                    <option>Galletas</option>
+                    <option>Café</option>
+                </select>
+                <label>Sabor</label>
+                <input type="text">
+                <label>Fecha de entrega</label>
+                <input type="date">
+                <label>Detalles del pedido</label>
+                <textarea rows="3"></textarea>
+                <button>Enviar pedido</button>
+            </form>
+        </div>
+    </body>
+</html>
