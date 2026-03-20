@@ -1,0 +1,120 @@
+<<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pasteles - Pastelería AndyValeria</title>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
+            rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Poppins', sans-serif;
+                background: #fff4f8;
+                color: #6b4a4a;
+                text-align: center;
+            }
+            /* TITULO */
+            header {
+                padding: 40px;
+            }
+            h1 {
+                font-family: 'Great Vibes', cursive;
+                font-size: 55px;
+                color: #d27ca7;
+            }
+            /* BOTON VOLVER */
+            .volver {
+                display: inline-block;
+                margin-bottom: 25px;
+                padding: 8px 15px;
+                background: #f7d6ff;
+                border: 2px solid #d27ca7;
+                border-radius: 10px;
+                text-decoration: none;
+                color: #6b4a4a;
+                font-size: 15px;
+            }
+            .volver:hover {
+                background: #eed1ff;
+            }
+            /* GALERIA */
+            .galeria {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 25px;
+                padding: 40px;
+            }
+            /* TARJETAS */
+            .card {
+                background: white;
+                border-radius: 18px;
+                padding: 15px;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+                transition: 0.3s;
+            }
+            .card:hover {
+                transform: scale(1.03);
+            }
+            .card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 12px;
+            }
+            .card h3 {
+                margin: 10px 0 5px 0;
+                color: #d96ab2;
+            }
+            .precio {
+                color: #e16a9b;
+                font-weight: bold;
+                font-size: 18px;
+            }
+            /* RESPONSIVE */
+            @media(max-width:600px) {
+                h1 {
+                    font-size: 40px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Cupcakes con Decoración</h1>
+            <a class="volver" href="index.html">MENÚ</a>
+        </header>
+        <section class="galeria">
+            <div class="card">
+                <img src="Cp7.jpeg">
+                <h3>Cupcakes Red Velvet con Fresa</h3>
+                <p class="precio">$65</p>
+            </div>
+            <div class="card">
+                <img src="Cp8.jpeg">
+                <h3>Cupcakes de Chocolate Fresón</h3>
+                <p class="precio">$60</p>
+            </div>
+            <div class="card">
+                <img src="Cp9.jpeg">
+                <h3> Cupcakes de Crema con Mermelada</h3>
+                <p class="precio">$55</p>
+            </div>
+            <div class="card">
+                <img src="Cp10.jpeg">
+                <h3>Cupcakes Rosas Rojas</h3>
+                <p class="precio">$75</p>
+            </div>
+            <div class="card">
+                <img src="Cp11.jpeg">
+                <h3>Cupcakes personalizados</h3>
+                <p class="precio">$</p>
+            </div>
+            <div class="card">
+                <img src="Cp12.jpeg">
+                <h3>Tartaletas Multifrutales</h3>
+                <p class="precio">$80</p>
+            </div>
+        </section>
+    </body>
+</html>
